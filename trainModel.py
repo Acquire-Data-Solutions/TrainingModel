@@ -195,7 +195,6 @@ def main():
             import traceback
             traceback.print_exc()
             sys.exit(1)
-        sys.exit(0)
     except Exception as e:
         print(f"ERROR in main: {e}", flush=True)
         import traceback
@@ -208,6 +207,5 @@ if __name__ == "__main__":
     # Prevent multiprocessing issues with PyInstaller
     if hasattr(sys, 'frozen'):
         import multiprocessing
-
         multiprocessing.freeze_support()
     main()
